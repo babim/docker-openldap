@@ -1,6 +1,4 @@
-FROM debian:jessie
-
-MAINTAINER Christian Luginbühl <dinkel@pimprecords.com>
+FROM babim/debianbase
 
 ENV OPENLDAP_VERSION 2.4.40
 
