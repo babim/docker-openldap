@@ -16,14 +16,14 @@ Usage
 The most simple form would be to start the application like so (however this is
 not the recommended way - see below):
 
-    docker run -d -p 389:389 -e SLAPD_PASSWORD=mysecretpassword -e SLAPD_DOMAIN=ldap.example.org dinkel/openldap
+    docker run -d -p 389:389 -e SLAPD_PASSWORD=mysecretpassword -e SLAPD_DOMAIN=ldap.example.org babim/openldap
 
 To get the full potential this image offers, one should first create a data-only
 container or (named) volumes (see "Data persistence" below) and start the 
 OpenLDAP daemon in one of these ways:
 
     docker run -d --volumes-from your-data-container [CONFIG] dinkel/openldap
-    docker run -d --volume your-config-volume:/etc/ldap --volume your-data-volume:/var/lib/ldap [CONFIG] dinkel/openldap
+    docker run -d --volume your-config-volume:/etc/ldap --volume your-data-volume:/var/lib/ldap [CONFIG] babim/openldap
 
 An application talking to OpenLDAP should then `--link` the container:
 
@@ -127,7 +127,7 @@ some data before launching the container. In order to do that, one can mount a
 host directory as a data volume in `/etc/ldap.dist/prepopulate`. Each LDIF file 
 is run through `slapadd` in alphabetical order. E.g.
 
-    docker run -d --volume /path/to/dir/with/ldif-files:/etc/ldap.dist/prepopulate [CONFIG] dinkel/openldap
+    docker run -d --volume /path/to/dir/with/ldif-files:/etc/ldap.dist/prepopulate [CONFIG] babim/openldap
 
 Please note that the prepopulation files are only processed on the containers 
 first run (a.k.a. as long as there is no data in the database).
