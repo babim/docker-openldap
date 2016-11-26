@@ -22,7 +22,7 @@ To get the full potential this image offers, one should first create a data-only
 container or (named) volumes (see "Data persistence" below) and start the 
 OpenLDAP daemon in one of these ways:
 
-    docker run -d --volumes-from your-data-container [CONFIG] dinkel/openldap
+    docker run -d --volumes-from your-data-container [CONFIG] babim/openldap
     docker run -d --volume your-config-volume:/etc/ldap --volume your-data-volume:/var/lib/ldap [CONFIG] babim/openldap
 
 An application talking to OpenLDAP should then `--link` the container:
