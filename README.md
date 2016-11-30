@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/babim/openldap.svg)](https://microbadger.com/images/babim/openldap "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/openldap.svg)](https://microbadger.com/images/babim/openldap "Get your own version badge on microbadger.com")
+
 docker-openldap
 ===============
 
